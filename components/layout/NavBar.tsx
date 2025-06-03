@@ -24,7 +24,7 @@ const NavBar = () => {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <nav className="bg-background/70 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-border/20">
+    <nav className="bg-background/40 backdrop-blur-lg shadow-lg sticky top-0 z-50 border-b border-border/20">
       <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between px-4 py-3">
         {/* Left - Logo */}
         <div className="flex items-center">
