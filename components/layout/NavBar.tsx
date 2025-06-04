@@ -28,7 +28,9 @@ const NavBar = () => {
       <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between px-4 py-3">
         {/* Left - Logo */}
         <div className="flex items-center">
-          <h1 className="text-2xl font-bold text-foreground">MovieVerse</h1>
+          <Link href="/" className="text-2xl font-bold text-foreground">
+            MovieVerse
+          </Link>
         </div>
 
         {/* Center - Desktop Nav Links */}
@@ -71,7 +73,11 @@ const NavBar = () => {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
-          {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {menuOpen ? (
+            <X className="w-6 h-6 cursor-pointer" />
+          ) : (
+            <Menu className="w-6 h-6 cursor-pointer" />
+          )}
         </button>
       </div>
 
