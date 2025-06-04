@@ -59,6 +59,8 @@ const NavBar = () => {
             <Search className="absolute left-2 top-1/2 -translate-y-1/2 text-muted-foreground w-4 h-4" />
             <Input
               placeholder="Search..."
+              type="sarch"
+              autoComplete="off"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="pl-8 pr-3 py-1 bg-background/50 backdrop-blur-sm w-40 sm:w-52 lg:w-64 focus-visible:ring-1"
@@ -122,6 +124,8 @@ const NavBar = () => {
                 <Search className="absolute left-2 top-1/2 -translate-y-1/2 text-muted-foreground w-4 h-4" />
                 <Input
                   placeholder="Search..."
+                  type="sarch"
+                  autoComplete="off"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   className="pl-8 w-full"
