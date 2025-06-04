@@ -4,8 +4,9 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
-import { Menu, X, Search, Moon } from "lucide-react";
+import { Menu, X, Search, Moon, Sun } from "lucide-react";
 import { Button } from "../ui/button";
+import { useTheme } from "next-themes";
 
 const NavBar = () => {
   const [search, setSearch] = useState("");
@@ -22,6 +23,7 @@ const NavBar = () => {
   };
 
   const closeMenu = () => setMenuOpen(false);
+  const { theme, setTheme } = useTheme();
 
   return (
     <nav className="bg-background/40 backdrop-blur-lg shadow-lg sticky top-0 z-50 border-b border-border/20">
@@ -62,8 +64,18 @@ const NavBar = () => {
               className="pl-8 pr-3 py-1 bg-background/50 backdrop-blur-sm w-40 sm:w-52 lg:w-64 focus-visible:ring-1"
             />
           </form>
-          <Button variant="ghost" size="icon" aria-label="Toggle dark mode">
-            <Moon className="text-foreground" />
+          <Button
+            variant="ghost"
+            size="icon"
+            aria-label="Toggle dark mode"
+            className="cursor-pointer"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          >
+            {theme === "dark" ? (
+              <Sun className="w-5 h-5 text-yellow-400" />
+            ) : (
+              <Moon className="w-5 h-5 text-gray-800" />
+            )}
           </Button>
         </div>
 

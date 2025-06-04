@@ -59,7 +59,7 @@ const HeroContent = ({data, releaseYear, imagePath, isMovie}: HeroContentProps) 
             <Button
               size="lg"
               variant="outline"
-              className="bg-gray-200 text-black hover:bg-red-200 cursor-pointer"
+              className="dark:bg-gray-200 text-black hover:bg-red-200 cursor-pointer"
             >
               <Info className="h-5 w-5 mr-2" />
               More Info
