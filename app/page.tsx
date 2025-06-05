@@ -1,4 +1,5 @@
 import Hero from "@/components/layout/Hero";
+import PopularMovies from "@/components/movie/PopularMovies";
 import TopTenMovies from "@/components/movie/TopTenMovies";
 import TrendingMovies from "@/components/movie/TrendingMovies";
 
@@ -11,6 +12,7 @@ export default function Home() {
         {/* left side */}
         <div className="flex flex-col">
           <TrendingMovies />
+          <PopularMovies />
         </div>
         {/* top 10 this week section */}
         <TopTenMovies />

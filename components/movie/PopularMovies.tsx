@@ -1,22 +1,22 @@
 "use client";
-import { useQuery } from "@tanstack/react-query";
 import { tmdbAPi } from "@/lib/tmdb";
-import { Movie } from "@/types/tmdb";
-import MovieGrid from "./MovieGrid";
+import { useQuery } from "@tanstack/react-query";
 import MovieGridSkeleton from "../skeleton/MovieGridSkeleton";
+import MovieGrid from "./MovieGrid";
+import { Movie } from "@/types/tmdb";
 
-const TrendingMovies = () => {
+const PopularMovies = () => {
   const { data, error, isLoading } = useQuery<Movie[]>({
-    queryKey: ["trending-movies"],
+    queryKey: ["popular-movies"],
     queryFn: async () => {
-      const response = await tmdbAPi.getTrendingMovies();
-      return response.results.slice(0,12);
+      const response = await tmdbAPi.getPopularMovies();
+      return response.results.slice(0, 18);
     },
   });
 
   return (
     <div>
-      {isLoading && <MovieGridSkeleton title="Trending Movies"/>}
+      {isLoading && <MovieGridSkeleton title="Trending Movies" />}
       {error && (
         <>
           <p>Error loading trending movies</p>
@@ -26,12 +26,12 @@ const TrendingMovies = () => {
         </>
       )}
       <MovieGrid
+        title="Popular Movies"
         movieData={data ?? []}
         isLoading={isLoading}
-        title="Trending Movies"
       />
     </div>
   );
 };
 
-export default TrendingMovies;
+export default PopularMovies;
