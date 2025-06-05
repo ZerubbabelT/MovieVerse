@@ -6,6 +6,7 @@ export interface Movie {
   backdrop_path: string;
   release_date: string;
   vote_average: number;
+  media_type: 'movie';
 }
 
 export interface TVShow {
@@ -16,6 +17,7 @@ export interface TVShow {
   backdrop_path: string;
   first_air_date: string;
   vote_average: number;
+  media_type: 'tv';
 }
 
 export interface MovieListResponse {

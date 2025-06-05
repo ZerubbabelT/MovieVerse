@@ -52,7 +52,9 @@ const Hero = () => {
     );
   }
   const imagePath = data?.backdrop_path || data?.poster_path || "/fallback.jpg";
-  const isMovie = (item: Movie | TVShow): item is Movie => "title" in item;
+  const isMovie = (data: Movie | TVShow): data is Movie => {
+    return data.media_type === "movie";
+  };
   let releaseYear = "";
   if (isMovie(data) && data.release_date) {
     releaseYear = new Date(data.release_date).getFullYear().toString();
