@@ -35,7 +35,7 @@ const HeroContent = ({data, releaseYear, imagePath, isMovie}: HeroContentProps) 
             <div className="flex items-center space-x-1">
               <Star className="h-5 w-5 text-yellow-400 fill-current" />
               <span className="text-lg font-semibold">
-                {data?.vote_average}
+                {data?.vote_average.toFixed(1)}
               </span>
             </div>
             <span className="text-lg">{releaseYear}</span>

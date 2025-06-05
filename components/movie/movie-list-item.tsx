@@ -27,7 +27,7 @@ const MovieListItem = ({ movie, index }: { movie: Movie; index: number }) => (
       <div className="flex items-center space-x-1 mt-1">
         <Star className="h-3 w-3 text-yellow-400 fill-current" />
         <span className="text-xs text-muted-foreground">
-          {movie.vote_average.toFixed(2)}
+          {movie.vote_average.toFixed(1)}
         </span>
       </div>
     </div>

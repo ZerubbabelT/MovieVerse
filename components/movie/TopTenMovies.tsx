@@ -20,7 +20,7 @@ const TopTenMovies = () => {
   const TopTenSkeleton = () => (
     <div className="xl:w-90 xl:flex-shrink-0 m-3 mt-15">
       <div className="sticky top-20">
-        <Card className="w-full bg-white dark:bg-zinc-900">
+        <Card className="w-full">
           <CardHeader>
             <CardTitle className="flex items-center space-x-2">
               <TrendingUp className="h-5 w-5 text-red-500" />
