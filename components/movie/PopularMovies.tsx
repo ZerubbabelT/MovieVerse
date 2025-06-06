@@ -16,7 +16,6 @@ const PopularMovies = () => {
 
   return (
     <div>
-      {isLoading && <MovieGridSkeleton title="Trending Movies" />}
       {error && (
         <>
           <p>Error loading trending movies</p>

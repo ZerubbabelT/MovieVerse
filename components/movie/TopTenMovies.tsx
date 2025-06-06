@@ -13,7 +13,7 @@ const TopTenMovies = () => {
     queryKey: ["top-ten-movies"],
     queryFn: async () => {
       const topTenMovies = await tmdbAPi.getTrendingMovies();
-      return topTenMovies.results.slice(0, 10);
+      return topTenMovies.results.sort((a: Movie, b: Movie) => b.vote_average - a.vote_average).slice(0, 10);
     },
   });
 
