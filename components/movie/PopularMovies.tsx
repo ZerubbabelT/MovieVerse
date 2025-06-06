@@ -28,6 +28,7 @@ const PopularMovies = () => {
         title="Popular Movies"
         movieData={data ?? []}
         isLoading={isLoading}
+        media="movie"
       />
     </div>
   );

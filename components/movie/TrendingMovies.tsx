@@ -10,7 +10,7 @@ const TrendingMovies = () => {
     queryKey: ["trending-movies"],
     queryFn: async () => {
       const response = await tmdbAPi.getTrendingMovies();
-      return response.results.slice(0,12);
+      return response.results.slice(0, 12);
     },
   });
 
@@ -28,6 +28,7 @@ const TrendingMovies = () => {
         movieData={data ?? []}
         isLoading={isLoading}
         title="Trending Movies"
+        media="movie"
       />
     </div>
   );
