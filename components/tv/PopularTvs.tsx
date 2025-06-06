@@ -1,17 +1,18 @@
 "use client";
-import { tmdbAPi } from "@/lib/tmdb";
-import { Movie } from "@/types/tmdb";
-import { useQuery } from "@tanstack/react-query";
-import MovieGrid from "./MovieGrid";
 
-const NowPlayingInTheaters = () => {
-  const { data, error, isLoading } = useQuery<Movie[]>({
-    queryKey: ["nowPlayingInTheaters"],
+import { tmdbAPi } from "@/lib/tmdb";
+import { useQuery } from "@tanstack/react-query";
+import MovieGrid from "../movie/MovieGrid";
+import { TVShow } from "@/types/tmdb";
+
+const PopularTvs = () => {
+  const { data, error, isLoading } = useQuery<TVShow[]>({
+    queryKey: ["popular-tvs"],
     queryFn: async () => {
-      const response = await tmdbAPi.getNowPlayingMovies();
+      const response = await tmdbAPi.getTopRatedTvShows();
       return response.results
-        .sort((a: Movie, b: Movie) => b.popularity - a.popularity)
-        .slice(0, 10);
+              .sort((a: TVShow, b: TVShow) => b.popularity - a.popularity)
+              .slice(0, 18);
     },
   });
   return (
@@ -25,13 +26,13 @@ const NowPlayingInTheaters = () => {
         </>
       )}
       <MovieGrid
-        title="Now Playing in Theaters"
         isLoading={isLoading}
+        title="Popular TvShows"
+        media="tv"
         data={data ?? []}
-        media="movie"
       />
     </div>
   );
 };
 
-export default NowPlayingInTheaters;
+export default PopularTvs;

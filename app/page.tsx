@@ -3,6 +3,7 @@ import NowPlayingInTheaters from "@/components/movie/NowPlayingInTheaters";
 import PopularMovies from "@/components/movie/PopularMovies";
 import TopTenMovies from "@/components/movie/TopTenMovies";
 import TrendingMovies from "@/components/movie/TrendingMovies";
+import PopularTvs from "@/components/tv/PopularTvs";
 import TrendingTvs from "@/components/tv/TrendingTvs";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
           <NowPlayingInTheaters />
           {/* tvs  */}
           <TrendingTvs />
+          <PopularTvs />
         </div>
         {/* top 10 this week section */}
         <TopTenMovies />

@@ -25,7 +25,7 @@ const TrendingMovies = () => {
         </>
       )}
       <MovieGrid
-        movieData={data ?? []}
+        data={data ?? []}
         isLoading={isLoading}
         title="Trending Movies"
         media="movie"

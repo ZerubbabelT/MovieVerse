@@ -26,7 +26,7 @@ const PopularMovies = () => {
       )}
       <MovieGrid
         title="Popular Movies"
-        movieData={data ?? []}
+        data={data ?? []}
         isLoading={isLoading}
         media="movie"
       />
