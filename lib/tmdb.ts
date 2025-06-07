@@ -8,7 +8,7 @@ const fetcher = async (endpoint: string) => {
   try {
     const url = `${BASE_URL}${endpoint}${
       endpoint.includes("?") ? "&" : "?"
-    }api_key=${TMDB_API_KEY}&language=en-US`;
+    }api_key=${TMDB_API_KEY}&language=en-US&adult=false`;
     const response = await axios.get(url);
     console.log(response.data);
     return response.data;
@@ -20,11 +20,11 @@ const fetcher = async (endpoint: string) => {
 
 export const tmdbAPi = {
   getMovieDetails: (id: number) => fetcher(`movie/${id}`),
-  getPopularMovies: () => fetcher("movie/popular"),
+  getPopularMovies: (pageNumber: number = 1) => fetcher(`movie/popular?page=${pageNumber}`),
   getTrendingMovies: () => fetcher("trending/movie/day"),
   getTrendingWeeklyMovies: () => fetcher("trending/movie/week"),
   getNowPlayingMovies: () => fetcher("movie/now_playing"),
-  getUpcomingMovies: () => fetcher("movie/upcoming"),
+  getUpcomingMovies: () => fetcher(`movie/changes?page=1`),
   getTopRatedMovies: () => fetcher("movie/top_rated"),
 
   getTVShowDetails: (id: number) => fetcher(`tv/${id}`),
