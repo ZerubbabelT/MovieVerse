@@ -13,5 +13,13 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: "Home",
+        destination: "/",
+      }
+    ]
+  }
 };
 export default nextConfig;
