@@ -25,13 +25,13 @@ export const tmdbAPi = {
   getTrendingWeeklyMovies: () => fetcher("trending/movie/week"),
   getNowPlayingMovies: () => fetcher("movie/now_playing"),
   getUpcomingMovies: () => fetcher(`movie/changes?page=1`),
-  getTopRatedMovies: () => fetcher("movie/top_rated"),
+  getTopRatedMovies: (pageNumber:number = 1) => fetcher(`movie/top_rated?page=${pageNumber}`),
 
   getTVShowDetails: (id: number) => fetcher(`tv/${id}`),
   getPopularTVShows: () => fetcher("tv/popular"),
   getTrendingTVShows: (pageNumber: number = 1) => fetcher(`trending/tv/day?page=${pageNumber}`),
   getAiringTodayTvShows: () => fetcher("tv/airing_today"),
-  getTopRatedTvShows: () => fetcher("tv/top_rated"),
+  getTopRatedTvShows: (pageNumber:number = 1) => fetcher(`tv/top_rated?page=${pageNumber}`),
 
   getSearchMovies: (query: string) =>
     fetcher(`search/movie?query=${encodeURIComponent(query)}`),
