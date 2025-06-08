@@ -16,7 +16,7 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
-        source: "Home",
+        source: "/home",
         destination: "/",
       }
     ]

@@ -29,7 +29,7 @@ export const tmdbAPi = {
 
   getTVShowDetails: (id: number) => fetcher(`tv/${id}`),
   getPopularTVShows: () => fetcher("tv/popular"),
-  getTrendingTVShows: () => fetcher("trending/tv/day"),
+  getTrendingTVShows: (pageNumber: number = 1) => fetcher(`trending/tv/day?page=${pageNumber}`),
   getAiringTodayTvShows: () => fetcher("tv/airing_today"),
   getTopRatedTvShows: () => fetcher("tv/top_rated"),
 
