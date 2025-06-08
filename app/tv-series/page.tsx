@@ -52,12 +52,11 @@ const Tvs = () => {
         </>
       )}
       <MovieGrid
-        media="tv"
         data={allTvs}
         isLoading={isLoading}
         title="Tv Series"
       />
-      <div ref={ref} className="flex justify-center">
+      <div ref={ref} className="text-center mt-10">
         {isFetchingNextPage ? (
           <div className="relative flex items-center justify-center">
             <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-white"></div>

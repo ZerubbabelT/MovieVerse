@@ -28,7 +28,6 @@ const TrendingMovies = () => {
         data={data ?? []}
         isLoading={isLoading}
         title="Trending Movies"
-        media="movie"
       />
     </div>
   );

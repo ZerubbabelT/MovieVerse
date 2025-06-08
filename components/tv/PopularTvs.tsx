@@ -28,7 +28,6 @@ const PopularTvs = () => {
       <MovieGrid
         isLoading={isLoading}
         title="Popular TvShows"
-        media="tv"
         data={data ?? []}
       />
     </div>

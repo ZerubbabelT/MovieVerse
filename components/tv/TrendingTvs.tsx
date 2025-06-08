@@ -29,7 +29,6 @@ const TrendingTvs = () => {
         isLoading={isLoading}
         data={data ?? []}
         title="Trending Tv shows"
-        media="tv"
       />
     </div>
   );

@@ -28,7 +28,6 @@ const NowPlayingInTheaters = () => {
         title="Now Playing in Theaters"
         isLoading={isLoading}
         data={data ?? []}
-        media="movie"
       />
     </div>
   );
