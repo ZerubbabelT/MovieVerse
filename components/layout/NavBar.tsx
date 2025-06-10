@@ -58,7 +58,7 @@ const NavBar = () => {
           <form onSubmit={handleSearch} className="relative hidden md:block">
             <Search className="absolute left-2 top-1/2 -translate-y-1/2 text-muted-foreground w-4 h-4" />
             <Input
-              placeholder="Search..."
+              placeholder="Search movies & Tv ..."
               type="sarch"
               autoComplete="off"
               value={search}
@@ -123,7 +123,7 @@ const NavBar = () => {
               <form onSubmit={handleSearch} className="relative">
                 <Search className="absolute left-2 top-1/2 -translate-y-1/2 text-muted-foreground w-4 h-4" />
                 <Input
-                  placeholder="Search..."
+                  placeholder="Search movies & Tv ..."
                   type="sarch"
                   autoComplete="off"
                   value={search}
