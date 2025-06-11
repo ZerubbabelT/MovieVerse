@@ -1,25 +1,30 @@
-export interface Movie {
+interface BaseMedia {
   id: number;
-  title: string;
   overview: string;
   poster_path: string;
   backdrop_path: string;
-  release_date: string;
   vote_average: number;
-  media_type: "movie";
   popularity: number;
+  genre_ids: number[];
+  media_type?: "movie" | "tv"; // optional
 }
 
-export interface TVShow {
+export interface Movie extends BaseMedia {
+  title: string;
+  release_date: string;
+  media_type: "movie";
+}
+
+export interface Genre {
   id: number;
   name: string;
-  overview: string;
-  poster_path: string;
-  backdrop_path: string;
+  src: string;
+}
+
+export interface TVShow extends BaseMedia {
+  name: string;
   first_air_date: string;
-  vote_average: number;
   media_type: "tv";
-  popularity: number;
 }
 
 export interface MovieListResponse {
