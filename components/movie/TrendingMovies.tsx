@@ -3,7 +3,6 @@ import { useQuery } from "@tanstack/react-query";
 import { tmdbAPi } from "@/lib/tmdb";
 import { Movie } from "@/types/tmdb";
 import MovieGrid from "./MovieGrid";
-import MovieGridSkeleton from "../skeleton/MovieGridSkeleton";
 
 const TrendingMovies = () => {
   const { data, error, isLoading } = useQuery<Movie[]>({
