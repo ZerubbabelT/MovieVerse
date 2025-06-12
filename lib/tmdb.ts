@@ -20,18 +20,24 @@ const fetcher = async (endpoint: string) => {
 
 export const tmdbAPi = {
   getMovieDetails: (id: number) => fetcher(`movie/${id}`),
-  getPopularMovies: (pageNumber: number = 1) => fetcher(`movie/popular?page=${pageNumber}`),
+  getPopularMovies: (pageNumber: number = 1) =>
+    fetcher(`movie/popular?page=${pageNumber}`),
   getTrendingMovies: () => fetcher("trending/movie/day"),
   getTrendingWeeklyMovies: () => fetcher("trending/movie/week"),
   getNowPlayingMovies: () => fetcher("movie/now_playing"),
-  getUpcomingMovies: () => fetcher(`movie/changes?page=1`),
-  getTopRatedMovies: (pageNumber:number = 1) => fetcher(`movie/top_rated?page=${pageNumber}`),
+  getTopRatedMovies: (pageNumber: number = 1) =>
+    fetcher(`movie/top_rated?page=${pageNumber}`),
+  getMoviesByGenre: (genreId: number) =>
+    fetcher(`discover/movie?with_genres=${genreId}&sort_by=popularity.desc`),
 
   getTVShowDetails: (id: number) => fetcher(`tv/${id}`),
   getPopularTVShows: () => fetcher("tv/popular"),
-  getTrendingTVShows: (pageNumber: number = 1) => fetcher(`trending/tv/day?page=${pageNumber}`),
-  getAiringTodayTvShows: () => fetcher("tv/airing_today"),
-  getTopRatedTvShows: (pageNumber:number = 1) => fetcher(`tv/top_rated?page=${pageNumber}`),
+  getTrendingTVShows: (pageNumber: number = 1) =>
+    fetcher(`trending/tv/day?page=${pageNumber}`),
+  getTopRatedTvShows: (pageNumber: number = 1) =>
+    fetcher(`tv/top_rated?page=${pageNumber}`),
+  getTVByGenre: (genreId: number) =>
+    fetcher(`discover/tv?with_genres=${genreId}&sort_by=popularity.desc`),
 
   getSearchMovies: (query: string) =>
     fetcher(`search/movie?query=${encodeURIComponent(query)}`),

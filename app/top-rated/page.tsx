@@ -35,7 +35,10 @@ const TopRated = () => {
           tmdbAPi.getTopRatedTvShows(pageParam as number),
         ]);
 
-      const results = [...(movies.results ?? []), ...(tvs.results ?? [])];
+      const results = [
+        ...(movies.results.filter((movie) => parseInt(movie.release_date) > 2000) ?? []),
+        ...(tvs.results.filter((tv) => parseInt(tv.first_air_date) > 2000) ?? []),
+      ];
       return {
         results,
         page: movies.page, // or tvs.page, same shit
@@ -60,7 +63,7 @@ const TopRated = () => {
   const allTopRated = data?.pages.flatMap((page) => page.results) || [];
 
   const shuffledTopRated = useMemo(() => {
-    return shuffle(allTopRated)
+    return shuffle(allTopRated);
   }, [allTopRated]);
   return (
     <div className="p-15">
