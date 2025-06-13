@@ -1,13 +1,20 @@
+"use client";
 import { Movie } from "@/types/tmdb";
 import Image from "next/image";
 import { Card, CardContent } from "../ui/card";
 import { Calendar, Star } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const MovieCard = ({ movie }: { movie: Movie }) => {
+  const router = useRouter();
+  const handleClick = () => {
+    router.push(`/movies/${movie.id}`);
+  };
   return (
     <Card
       key={movie.id}
       className="p-0 m-0 group cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl border-0 bg-card/50 backdrop-blur-sm"
+      onClick={handleClick}
     >
       <CardContent className="p-0">
         <div className="relative overflow-hidden rounded-lg">

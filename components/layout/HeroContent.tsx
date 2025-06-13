@@ -1,17 +1,22 @@
-import { Movie, TVShow } from '@/types/tmdb';
+import { Movie, TVShow } from "@/types/tmdb";
 import { Star, Play, Info } from "lucide-react";
 import { Button } from "../ui/button";
 
 interface HeroContentProps {
-    data: Movie | TVShow;
-    releaseYear: string;
-    imagePath: string;
-    isMovie: (data: Movie | TVShow) => boolean;
+  data: Movie | TVShow;
+  releaseYear: string;
+  imagePath: string;
+  isMovie: (data: Movie | TVShow) => boolean;
 }
 
-const HeroContent = ({data, releaseYear, imagePath, isMovie}: HeroContentProps) => {
+const HeroContent = ({
+  data,
+  releaseYear,
+  imagePath,
+  isMovie,
+}: HeroContentProps) => {
   return (
-        <div className="relative h-[70vh] overflow-hidden">
+    <div className="relative h-[70vh] overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -68,7 +73,7 @@ const HeroContent = ({data, releaseYear, imagePath, isMovie}: HeroContentProps) 
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HeroContent
+export default HeroContent;
