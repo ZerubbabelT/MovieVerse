@@ -8,6 +8,7 @@ import { Bookmark, Calendar, Film, PlayIcon, Star } from "lucide-react";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import MovieTrailer from "./MovieTrailer";
+import MovieRecommendations from "./MovieRecommendations";
 
 const getGenreNames = (ids: number[]): string[] => {
   return ids
@@ -111,6 +112,10 @@ const MovieDetail = () => {
           Trailers
         </h1>
         <MovieTrailer />
+      </div>
+      {/* related movies  */}
+      <div>
+        <MovieRecommendations />
       </div>
     </div>
   );

@@ -21,6 +21,7 @@ const fetcher = async (endpoint: string) => {
 export const tmdbAPi = {
   getMovieDetails: (id: number) => fetcher(`movie/${id}`),
   getMovieVideos: (id: number) => fetcher(`movie/${id}/videos`),
+  getMovieRecommendations: (id: number) => fetcher(`movie/${id}/recommendations`),
   getPopularMovies: (pageNumber: number = 1) =>
     fetcher(`movie/popular?page=${pageNumber}`),
   getTrendingMovies: () => fetcher("trending/movie/day"),
