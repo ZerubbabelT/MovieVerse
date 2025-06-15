@@ -9,6 +9,7 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import MovieTrailer from "./MovieTrailer";
 import MovieRecommendations from "./MovieRecommendations";
+import { useRef } from "react";
 
 const getGenreNames = (ids: number[]): string[] => {
   return ids
@@ -17,6 +18,10 @@ const getGenreNames = (ids: number[]): string[] => {
 };
 
 const MovieDetail = () => {
+  const trailerRef = useRef<HTMLDivElement>(null);
+  const handleScrollToTrailer = () => {
+    trailerRef?.current?.scrollIntoView({ behavior: "smooth" });
+  };
   const { id } = useParams();
   const { data, error, isLoading } = useQuery<MovieDetail>({
     queryKey: ["movie-detail", id],
@@ -94,7 +99,11 @@ const MovieDetail = () => {
             {new Date(data.release_date).getFullYear()} | {data.runtime} min
           </p>
           <div className="flex space-x-4 my-2">
-            <Button size="lg" className="cursor-pointer">
+            <Button
+              size="lg"
+              className="cursor-pointer"
+              onClick={handleScrollToTrailer}
+            >
               <PlayIcon className="h-5 w-5 mr-2" />
               Watch Trailer
             </Button>
@@ -106,7 +115,10 @@ const MovieDetail = () => {
         </div>
       </div>
       {/* trailers */}
-      <div className="flex flex-col mx-30 mt-10 max-md-mx-15 max-sm:mx-5 gap-4">
+      <div
+        className="flex flex-col mx-30 mt-10 max-md-mx-15 max-sm:mx-5 gap-4"
+        ref={trailerRef}
+      >
         <h1 className="font-bold text-5xl flex gap-2 items-center">
           <Film className="w-10 h-10" />
           Trailers

@@ -4,6 +4,7 @@ import "./globals.css";
 import NavBar from "@/components/layout/NavBar";
 import TanstackQueryProvider from "@/lib/tanstack-query-provider";
 import { ThemeProvider } from "next-themes";
+import Footer from "@/components/layout/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +35,7 @@ export default function RootLayout({
           <TanstackQueryProvider>
             <NavBar />
             {children}
+            <Footer />
           </TanstackQueryProvider>
         </ThemeProvider>
       </body>

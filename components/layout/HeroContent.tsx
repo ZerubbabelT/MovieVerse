@@ -1,6 +1,7 @@
 import { Movie, TVShow } from "@/types/tmdb";
 import { Star, Play, Info } from "lucide-react";
 import { Button } from "../ui/button";
+import { useRouter } from "next/navigation";
 
 interface HeroContentProps {
   data: Movie | TVShow;
@@ -15,6 +16,10 @@ const HeroContent = ({
   imagePath,
   isMovie,
 }: HeroContentProps) => {
+  const router = useRouter()
+  const handleClick = () => {
+    isMovie(data) ? router.push(`/movies/${data.id}`) : router.push(`/tv-series/${data.id}`)
+  }
   return (
     <div className="relative h-[70vh] overflow-hidden">
       {/* Background Image */}
@@ -57,6 +62,7 @@ const HeroContent = ({
             <Button
               size="lg"
               className="bg-gray-200 text-black hover:bg-red-200 cursor-pointer"
+              onClick={handleClick}
             >
               <Play className="h-5 w-5 mr-2" />
               Watch Now
@@ -65,6 +71,7 @@ const HeroContent = ({
               size="lg"
               variant="outline"
               className="dark:bg-gray-200 text-black hover:bg-red-200 cursor-pointer"
+              onClick={handleClick}
             >
               <Info className="h-5 w-5 mr-2" />
               More Info
