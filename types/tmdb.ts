@@ -42,6 +42,21 @@ export interface MovieDetail {
   status: string;
 }
 
+export interface TvDetail {
+  id: number;
+  name: string;
+  overview: string;
+  genres: { id: number; name: string }[];
+  backdrop_path: string | null;
+  poster_path: string | null;
+  vote_average: number;
+  first_air_date: string;
+  number_of_seasons: number;
+  number_of_episodes: number;
+  status: string;
+}
+
+
 export interface Video {
   id: string;
   key: string; // YouTube video key

@@ -21,7 +21,8 @@ const fetcher = async (endpoint: string) => {
 export const tmdbAPi = {
   getMovieDetails: (id: number) => fetcher(`movie/${id}`),
   getMovieVideos: (id: number) => fetcher(`movie/${id}/videos`),
-  getMovieRecommendations: (id: number) => fetcher(`movie/${id}/recommendations`),
+  getMovieRecommendations: (id: number) =>
+    fetcher(`movie/${id}/recommendations`),
   getPopularMovies: (pageNumber: number = 1) =>
     fetcher(`movie/popular?page=${pageNumber}`),
   getTrendingMovies: () => fetcher("trending/movie/day"),
@@ -33,6 +34,8 @@ export const tmdbAPi = {
     fetcher(`discover/movie?with_genres=${genreId}&sort_by=popularity.desc`),
 
   getTVShowDetails: (id: number) => fetcher(`tv/${id}`),
+  getTvRecommendations: (id: number) => fetcher(`tv/${id}/recommendations`),
+  getTvVideos: (id: number) => fetcher(`tv/${id}/videos`),
   getPopularTVShows: () => fetcher("tv/popular"),
   getTrendingTVShows: (pageNumber: number = 1) =>
     fetcher(`trending/tv/day?page=${pageNumber}`),
