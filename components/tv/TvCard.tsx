@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 const TvCard = ({ tv }: { tv: TVShow }) => {
   const router = useRouter();
   const  handleClick = () => {
-    router.push(`/tv-series/genre/${tv.id}`)
+    router.push(`/tv-series/${tv.id}`)
   }
   return (
     <Card
