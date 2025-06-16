@@ -16,10 +16,12 @@ const HeroContent = ({
   imagePath,
   isMovie,
 }: HeroContentProps) => {
-  const router = useRouter()
+  const router = useRouter();
   const handleClick = () => {
-    isMovie(data) ? router.push(`/movies/${data.id}`) : router.push(`/tv-series/${data.id}`)
-  }
+    isMovie(data)
+      ? router.push(`/movies/${data.id}`)
+      : router.push(`/tv-series/${data.id}`);
+  };
   return (
     <div className="relative h-[70vh] overflow-hidden">
       {/* Background Image */}

@@ -36,8 +36,11 @@ const TopRated = () => {
         ]);
 
       const results = [
-        ...(movies.results.filter((movie) => parseInt(movie.release_date) > 2000) ?? []),
-        ...(tvs.results.filter((tv) => parseInt(tv.first_air_date) > 2000) ?? []),
+        ...(movies.results.filter(
+          (movie) => parseInt(movie.release_date) > 2000
+        ) ?? []),
+        ...(tvs.results.filter((tv) => parseInt(tv.first_air_date) > 2000) ??
+          []),
       ];
       return {
         results,
@@ -60,7 +63,6 @@ const TopRated = () => {
     }
   }, [inView, hasNextPage, fetchNextPage]);
 
-  
   const shuffledTopRated = useMemo(() => {
     const allTopRated = data?.pages.flatMap((page) => page.results) || [];
     return shuffle(allTopRated);
