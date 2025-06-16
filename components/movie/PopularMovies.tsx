@@ -1,7 +1,6 @@
 "use client";
 import { tmdbAPi } from "@/lib/tmdb";
 import { useQuery } from "@tanstack/react-query";
-import MovieGridSkeleton from "../skeleton/MovieGridSkeleton";
 import MovieGrid from "./MovieGrid";
 import { Movie } from "@/types/tmdb";
 
