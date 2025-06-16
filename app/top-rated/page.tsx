@@ -60,11 +60,12 @@ const TopRated = () => {
     }
   }, [inView, hasNextPage, fetchNextPage]);
 
-  const allTopRated = data?.pages.flatMap((page) => page.results) || [];
-
+  
   const shuffledTopRated = useMemo(() => {
+    const allTopRated = data?.pages.flatMap((page) => page.results) || [];
     return shuffle(allTopRated);
-  }, [allTopRated]);
+  }, [data]);
+  
   return (
     <div className="p-15">
       {error && (
