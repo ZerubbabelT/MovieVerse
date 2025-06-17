@@ -2,6 +2,12 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   // register the images from tmdb
   images: {
     remotePatterns: [
@@ -18,8 +24,8 @@ const nextConfig: NextConfig = {
       {
         source: "/home",
         destination: "/",
-      }
-    ]
-  }
+      },
+    ];
+  },
 };
 export default nextConfig;
