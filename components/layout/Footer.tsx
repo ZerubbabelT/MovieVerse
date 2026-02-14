@@ -6,7 +6,14 @@ const Footer = () => {
     <footer className="w-full py-6 border-t text-center text-muted-foreground text-sm flex flex justify-center items-center gap-2">
       <p>
         © {new Date().getFullYear()} Created by{" "}
-        <span className="font-semibold text-primary">Zerubbabel</span>
+        <a
+          href="https://github.com/ZerubbabelT/MovieVerse"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-primary hover:underline"
+        >
+          Zerubbabel
+        </a>
       </p>
 
       <a

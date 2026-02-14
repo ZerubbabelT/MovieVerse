@@ -5,6 +5,7 @@ import NavBar from "@/components/layout/NavBar";
 import TanstackQueryProvider from "@/lib/tanstack-query-provider";
 import { ThemeProvider } from "next-themes";
 import Footer from "@/components/layout/Footer";
+import { Analytics } from "@vercel/analytics/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body 
+      <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
@@ -41,6 +42,7 @@ export default function RootLayout({
             <Footer />
           </TanstackQueryProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
