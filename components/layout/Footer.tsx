@@ -1,5 +1,4 @@
-import { FaGithub } from "react-icons/fa";
-import { ArrowUpRight } from "lucide-react"; // modern arrow icon
+import { Github, ArrowUpRight } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -22,7 +21,7 @@ const Footer = () => {
         rel="noopener noreferrer"
         className="group flex items-center gap-1 text-foreground hover:text-primary transition-colors"
       >
-        <FaGithub className="w-5 h-5" />
+        <Github className="w-5 h-5" />
         <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 translate-x-0 group-hover:translate-x-1 transition-all duration-200" />
       </a>
     </footer>

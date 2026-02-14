@@ -5,7 +5,8 @@ import NavBar from "@/components/layout/NavBar";
 import TanstackQueryProvider from "@/lib/tanstack-query-provider";
 import { ThemeProvider } from "next-themes";
 import Footer from "@/components/layout/Footer";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
